@@ -16,6 +16,7 @@
   },
   "activationEvents": [],
   "main": "./out/extension.js",
+  "publisher": "Denoph",
   "contributes": {
     "commands": [
       {
