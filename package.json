@@ -1,0 +1,53 @@
+{
+  "name": "windowsify-paths",
+  "displayName": "Windowsify Paths",
+  "description": "Copy file paths in Windows format (with backslashes)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "windowsify-paths.copyWindowsPath",
+        "title": "Copy Windows Path"
+      },
+      {
+        "command": "windowsify-paths.copyWindowsRelativePath",
+        "title": "Copy Windows Relative Path"
+      }
+    ],
+    "menus": {
+      "editor/title/context": [
+        {
+          "command": "windowsify-paths.copyWindowsPath",
+          "group": "2_files@10"
+        },
+        {
+          "command": "windowsify-paths.copyWindowsRelativePath",
+          "group": "2_files@11"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6"
+  }
+}
